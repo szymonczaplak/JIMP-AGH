@@ -7,7 +7,7 @@
      
 #define BUFSIZE 1024
 	
-void wyswietl_tablice (int rozmiar, int tablica[rozmiar])
+void wyswietl_tablice (int rozmiar, long int tablica[rozmiar])
 {
 	for(int i=0; i<rozmiar; i++)
 	{
@@ -16,8 +16,8 @@ void wyswietl_tablice (int rozmiar, int tablica[rozmiar])
 	printf("\n\n");
 }
 
-	
-void sortuj_tablice(int tablica[], int rozmiar)
+
+void sortuj_tablice(long int tablica[], int rozmiar)
 {
 	int schowek, zmiana;
 	do
@@ -36,6 +36,7 @@ void sortuj_tablice(int tablica[], int rozmiar)
 	}while(zmiana!=0);
 }
      
+
 int main (int argc, char **argv) {
 	srand(time(NULL));
 	if(argc != 2)
@@ -58,29 +59,21 @@ int main (int argc, char **argv) {
 			return 1;
 		}
 	}
-	
-	char str[BUFSIZE];
-
-	int i =0;
-	int size = BUFSIZE;
-	char* str2 = fgets(str, size, f1);
-	
-	/*for(int i=0; i<BUFSIZE; i++)
+	int rozmiar =0;
+	char bufor[BUFSIZE];
+	long int ready_tab[BUFSIZE];
+	while(fscanf( f1 , "%s", &bufor) != EOF)
 	{
-		if()
-		{
-			licznik++;
-		}
-
-	}*/
-	//printf("%d", licznik);
-	int tab[BUFSIZE];
-	int licznik = fscanf( f1, "%d", &tab);
-    printf("%d", tab[1]);
-    wyswietl_tablice(BUFSIZE, tab);
+		ready_tab[rozmiar] = strtol(bufor, NULL, 10);
+		rozmiar++;
+	}
+	
+	
+	sortuj_tablice(ready_tab, rozmiar);
+    wyswietl_tablice(rozmiar, ready_tab);
     
     fclose(f1);
     
     return 0;
-    }
+}
 

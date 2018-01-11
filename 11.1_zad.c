@@ -11,14 +11,14 @@
     int main (int argc, char **argv) {
 
 		srand(time(NULL));
-		if(argc != 2)
+		if(argc != 3)
 		{
 			printf("Brak argumentow");
 			return 1;
 		}
 		
-		int ilosc_liczb = *argv[1] - 48;
-
+		int ilosc_liczb = *argv[1] -48;
+		printf("%d", ilosc_liczb);
 		
 		char *plik;
 		plik = argv[2];
@@ -38,7 +38,7 @@
 		for (int i =0; i<ilosc_liczb; i++)
 		{
 			int liczba = rand()%100;
-			fprintf(f1, "%d\n", liczba);
+			fprintf(f1, "%d \n", liczba);
 		}
         
         fclose(f1);
