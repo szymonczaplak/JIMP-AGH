@@ -1,44 +1,38 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdarg.h>
 
 #define BUFSIZE 1024
 
-
-void extra_printf( char tekst[] )
+void ExtraPrint (const char* tekst, ...)
 {
-	int i=0;
-	while(i <= strlen(tekst))
+	int length = strlen(tekst);
+	va_list args;
+	va_start(args, tekst);
+	int *one_arg;
+	
+	for (int i=0; i< length; i++)
 	{
-		if(tekst[i] == 37)
+		if (tekst[i+1] == 'd' && tekst[i] == '%')
 		{
-			int zmienna=0;
+			one_arg = va_arg(args, int*);
 			
-			while(getchar() != '\n');
-			
-			scanf("%d", &zmienna);
-			printf("\n%d\n", zmienna);
-			
-			if(i != strlen(tekst))
-			{
-				i++;
-			}
+			scanf("%d", one_arg);
+			i++;
 		}
 		else
 		{
 			printf("%c", tekst[i]);
 		}
-		i++;
 	}
+	va_end(args);
 }
-
 
 int main(void)
 {
-	char tekst[BUFSIZE];
-	int ile = scanf("%1000[0-9a-zA-Z \%]", &tekst);
-	for (int i = 0; i< ile; i++)
-	{
-		extra_printf(tekst);
-	}
+	int wartosci[3];
+	
+	ExtraPrint("Bok 1:%d\nBok 2: %d\nBok 3: %d\n", &wartosci[0], &wartosci[1], &wartosci[2]);
+	
 	return 0;
 }
