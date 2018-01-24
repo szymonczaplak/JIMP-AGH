@@ -8,7 +8,6 @@ void ignore_rest_of_the_line_in_stdin(void)
     while (getchar() != '\n');
 }
 
-
 int input_int(char tekst[])
 {
     int zmienna=0;
@@ -25,7 +24,6 @@ int input_int(char tekst[])
     return zmienna;
 }
 
-
 void losuj_tablice (int tablica[], int rozmiar)
 {
     for(int i=0; i<rozmiar; i++)
@@ -33,7 +31,6 @@ void losuj_tablice (int tablica[], int rozmiar)
         tablica[i]= rand() %20;
     }
 }
-
 
 void wyswietl_tablice (int rozmiar, int tablica[rozmiar])
 {
@@ -55,7 +52,6 @@ double licz_srednia ( int tablica[], int rozmiar)
 
     return (suma / rozmiar);
 }
-
 
 void sortuj_tablice(int tablica[], int rozmiar)
 {
@@ -83,8 +79,6 @@ void kopiuj_tablice(int kopia[], int tablica[], int rozmiar)
         kopia[i]=tablica[i];
     }
 }
-
-
 
 double mediana (int tablica[], int rozmiar)
 {
@@ -130,8 +124,6 @@ int maxymalny (int tablica[], int rozmiar)
     return posortowana[rozmiar-1];
 }
     
-    
-
 int main(void)
 {
     const int rozmiar=10;
