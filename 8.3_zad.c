@@ -7,12 +7,14 @@ long long copyArgumentAndPrintCharByCharReturningSumOfArguments(void* data, size
 	char *tablica = (char*)malloc(sizeOfData);
 	memcpy( tablica, data, sizeOfData);
 	int i=0;
+	long long suma = 0;
 	for (int i = 0; i< sizeOfData/sizeof(char); i++)
 	{
-		printf("%c\n", tablica[i]);
+		printf("%X\n", tablica[i]);
+		suma += tablica[i];
 	}
 	
-	return 0;
+	return suma;
 }
 
 int main (void)
@@ -20,10 +22,10 @@ int main (void)
 	char bufor[20];
 	for (int i =0; i<20; i++)
 	{
-		bufor[i]='2';
+		bufor[i]='z';
 	}
 	
-	copyArgumentAndPrintCharByCharReturningSumOfArguments(bufor, sizeof(char)*20);
+	printf("\n\n%d\n ",copyArgumentAndPrintCharByCharReturningSumOfArguments(bufor, sizeof(char)*20));
 }
 	
 	
