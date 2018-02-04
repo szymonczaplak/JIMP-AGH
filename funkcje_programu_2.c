@@ -42,12 +42,12 @@ void ruch_gracz_2(int wybor_gracza2, int tablica[3][3])
    }
 }
 
-void gracz2 (void)
+void gracz2(void)
 {
     puts("Kolej gracza 2\n");
 }
 
-int sprawdzam_poziom (int tryb, int tablica[3][3])
+int sprawdzam_poziom(int tryb, int tablica[3][3])
 {
    int suma = 0;
    for(int a = 0; a < 3; a++)
@@ -99,7 +99,7 @@ int sprawdzam_pion(int tryb, int tablica[3][3])
 }
 
 
-int sprawdzam_skosy (int tryb, int tablica[3][3])
+int sprawdzam_skosy(int tryb, int tablica[3][3])
 {
    int suma = tablica[0][0]+tablica[1][1]+tablica[2][2];
    if(suma == tryb)
@@ -369,7 +369,7 @@ void wypisz_tablice(int tablica[3][3])
    }
 }
 
-void gracz1 (void)
+void gracz1(void)
 {
     puts("Kolej gracza 1\n");
 }
@@ -422,7 +422,7 @@ int werdykt_wygranej(int suma)
      return 0;
 }
 
-int sprawdz_wygrana (int tablica[3][3])
+int sprawdz_wygrana(int tablica[3][3])
 {
 	int wyznacznik_wygranej = 0;
    int suma = 0;
@@ -457,7 +457,7 @@ int sprawdz_wygrana (int tablica[3][3])
 	return (wyznacznik_wygranej >= 1);
 }
 
-int tryb_gry (void)
+int tryb_gry(void)
 {
    int tryb;
    do
