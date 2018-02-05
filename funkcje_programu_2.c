@@ -63,13 +63,13 @@ int sprawdzam_poziom(int tryb, int tablica[3][3])
           {
              if(tablica[a][j] == 0)
              {
- 				tablica[a][j] = 1;
-	 		}
+                tablica[a][j] = 1;
+            }
           }
        return 1;
        }
-	}
-	return 0;   
+    }
+    return 0;   
 }
 
 
@@ -89,15 +89,14 @@ int sprawdzam_pion(int tryb, int tablica[3][3])
          {
             if(tablica[j][a] == 0)
             {
-				tablica[j][a] = 1;
-			}
+                tablica[j][a] = 1;
+            }
          }
          return 1;
       }
    }
    return 0;
 }
-
 
 int sprawdzam_skosy(int tryb, int tablica[3][3])
 {
@@ -108,8 +107,8 @@ int sprawdzam_skosy(int tryb, int tablica[3][3])
       {
          if(tablica[c][c] == 0)
          {
-		    tablica[c][c] = 1;
-		 }
+            tablica[c][c] = 1;
+         }
       }
       return 1;
    }
@@ -165,7 +164,6 @@ void ruch_szympansa(int tablica[3][3])
          czy_gotowe = 1;
          return;
       }
-
    }while(czy_gotowe == 0);
 }
 
@@ -208,7 +206,6 @@ int ruch_drugi(int tablica[3][3])
          scenariusz = 1;
          ruch_komputera(tablica);
          break;
-         
       }
       case 0:
       {
@@ -254,8 +251,8 @@ void ruch_trzeci(int scenariusz, int tablica [3][3])
          switch(scenariusz)
          {
             case 1:
-                  ruch_komputera(tablica);
-                  break;
+               ruch_komputera(tablica);
+               break;
             case 4:
                ruch_komputera(tablica);
                break;
@@ -410,7 +407,7 @@ void ruch(int wybor, int  tablica[3][3])
 
 int werdykt_wygranej(int suma)
 {
-	switch(suma)
+    switch(suma)
          {
             case 3*WARTOSC_X:
                puts("\n\n\nWygraly X\n\n");
@@ -424,7 +421,7 @@ int werdykt_wygranej(int suma)
 
 int sprawdz_wygrana(int tablica[3][3])
 {
-	int wyznacznik_wygranej = 0;
+    int wyznacznik_wygranej = 0;
    int suma = 0;
    for(int a = 0; a < 3; a++)
       {
@@ -433,7 +430,7 @@ int sprawdz_wygrana(int tablica[3][3])
             suma += tablica[a][i];
          }
          wyznacznik_wygranej += werdykt_wygranej(suma);
-				
+                
          suma = 0;
       }
 
@@ -453,8 +450,8 @@ int sprawdz_wygrana(int tablica[3][3])
    
    suma = tablica[0][2] + tablica[1][1] + tablica[2][0];
    wyznacznik_wygranej += werdykt_wygranej(suma);
-	
-	return (wyznacznik_wygranej >= 1);
+    
+    return (wyznacznik_wygranej >= 1);
 }
 
 int tryb_gry(void)
